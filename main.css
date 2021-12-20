@@ -1,0 +1,72 @@
+:root { /*:root selector represents the <html> element in the html page*/
+        /*three constants have been declared below*/
+    --green: #00FF00;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+* { /*the * selector is a universal selector that applies to all page elements
+    except where a more specific element selector overrides it.*/
+    color: var(--fontColor);
+    font-family: helvetica;
+}
+
+body { /*This applies the styles to anything in the body tags in HTML*/
+    /* before  font-family: monospace;  */
+    background: var(--bg);
+}
+
+/*It's interesting how styles cascade from body to h1.
+We didn't define anything for h1, so it inherits styling from the body.
+However, li takes precedence over the body tag because you specifically defined a style for it.*/
+
+ul { /*This applies the styles to anything in the ul tags in HTML*/
+    font-family: helvetica;
+}
+
+li { /*This applies the styles to anything in the li tags in HTML unless it has a set class it is a part of. This can be seen in the HTML code.
+    This rule of precedence applies to other tags as well*/
+    list-style: circle;
+}
+
+.list { /*the period "." in front of list indicates a class selector. Each HTML element that contains a class attribute set to "list" will inherit styles defined here*/
+    list-style: square;
+}
+
+/* #msg { the # indicates that this is an ID Selector. the HTML element that has its ID set to "msg" will inherit styles defined here
+    font-family: monospace;
+} */
+
+/*bg and fontColor will be defined below.
+The var keyword specifies variables to use as the property values.
+In this care they are set to --green and --black as these are root constants.*/
+
+.light-theme{
+    --bg: var(--green);
+    --fontColor: var(--black);
+    --btnBg: var(--black);
+    --btnFontColor: var(--white);
+}
+
+.dark-theme{
+    --bg: var(--black);
+    --fontColor: var(--green);
+    --btnBg: var(--white);
+    --btnFontColor: var(--black);
+}
+
+.btn {
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    color: var(--btnFontColor);
+    background-color: var(--btnBg);
+}
+
+.btn:focus { /*eliminates the rectangular outline when button is selected.*/
+    outline-style: none;
+}
