@@ -5,6 +5,12 @@
     --black: #000000;
 }
 
+.pics {
+    filter: invert(0%);/*this is needed to keep it from erroring.
+    its almost as if its a declaration of sorts.*/
+    -webkit-filter: invert(100%);
+}
+
 * { /*the * selector is a universal selector that applies to all page elements
     except where a more specific element selector overrides it.*/
     color: var(--fontColor);
@@ -57,8 +63,8 @@ In this care they are set to --green and --black as these are root constants.*/
 
 .btn {
     position: absolute;
-    top: 20px;
-    left: 250px;
+    top: 30px;
+    left: 500px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
